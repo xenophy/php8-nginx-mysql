@@ -6,7 +6,7 @@ services:
         build: .
         working_dir: /var/www/
         volumes:
-            - ./public:/var/www
+            - ./:/var/www
         networks:
             - app-network
 
@@ -31,7 +31,7 @@ services:
         ports:
             - 8000:80
         volumes:
-            - ./public:/var/www
+            - ./:/var/www
             - ./nginx/conf.d/:/etc/nginx/conf.d/
         networks:
             - app-network
